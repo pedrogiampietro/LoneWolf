@@ -27,7 +27,7 @@ const Sponsors = () => {
                 className="owl-item cloned"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/4.png"
                     alt="Upload"
@@ -38,7 +38,7 @@ const Sponsors = () => {
                 className="owl-item cloned"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/5.png"
                     alt="Upload"
@@ -49,7 +49,7 @@ const Sponsors = () => {
                 className="owl-item cloned"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/6.png"
                     alt="Upload"
@@ -60,7 +60,7 @@ const Sponsors = () => {
                 className="owl-item cloned"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/7.png"
                     alt="Upload"
@@ -71,7 +71,7 @@ const Sponsors = () => {
                 className="owl-item cloned"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/1.png"
                     alt="Upload"
@@ -82,7 +82,7 @@ const Sponsors = () => {
                 className="owl-item active"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/8.png"
                     alt="Upload"
@@ -93,7 +93,7 @@ const Sponsors = () => {
                 className="owl-item active"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/4.png"
                     alt="Upload"
@@ -104,7 +104,7 @@ const Sponsors = () => {
                 className="owl-item active"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/5.png"
                     alt="Upload"
@@ -115,7 +115,7 @@ const Sponsors = () => {
                 className="owl-item active"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/6.png"
                     alt="Upload"
@@ -126,7 +126,7 @@ const Sponsors = () => {
                 className="owl-item active"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/7.png"
                     alt="Upload"
@@ -137,7 +137,7 @@ const Sponsors = () => {
                 className="owl-item"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/1.png"
                     alt="Upload"
@@ -148,7 +148,7 @@ const Sponsors = () => {
                 className="owl-item cloned"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/8.png"
                     alt="Upload"
@@ -159,7 +159,7 @@ const Sponsors = () => {
                 className="owl-item cloned"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/4.png"
                     alt="Upload"
@@ -170,7 +170,7 @@ const Sponsors = () => {
                 className="owl-item cloned"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/5.png"
                     alt="Upload"
@@ -181,7 +181,7 @@ const Sponsors = () => {
                 className="owl-item cloned"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/6.png"
                     alt="Upload"
@@ -192,7 +192,7 @@ const Sponsors = () => {
                 className="owl-item cloned"
                 style={{ width: 154, marginRight: 100 }}
               >
-                <Link to="https://themeforest.net/user/pixiesquad?ref=PixieSquad">
+                <Link to="/">
                   <img
                     src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/7.png"
                     alt="Upload"

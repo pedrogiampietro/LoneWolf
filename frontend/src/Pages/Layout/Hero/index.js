@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MainHero from '../../../assets/img/main-hero.jpg';
 
 const Hero = () => {
@@ -17,12 +18,9 @@ const Hero = () => {
             campeonatos, monte seu perfil e sua line :)
           </h3>
 
-          <a
-            href="https://themeforest.net/item/pixiehuge-esports-gaming-theme-for-clans-organizations/20175845?license=regular&open_purchase_for_item_id=20175845&ref=PixieSquad"
-            className="btn btn-blue"
-          >
+          <Link to="/sign-up" className="btn btn-blue">
             Registrar agora!
-          </a>
+          </Link>
         </article>
       </div>
     </section>

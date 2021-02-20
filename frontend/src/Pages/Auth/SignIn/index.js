@@ -1,56 +1,67 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Tilt from 'react-parallax-tilt';
 
 import Content from '../../Layout/Content';
-import '../styles.css';
+import LoginImage from '../../../assets/img/login.png';
+import './styles.css';
 
 const SignIn = () => {
   return (
     <Content>
       {/* /SECTION-HEADER */}
       <article className="boxes">
-        <div className="login-container text-c animated flipInX">
-          <div>
-            <h1 className="logo-badge text-whitesmoke">
-              <span className="fa fa-user-circle" />
-            </h1>
-          </div>
-          <h3 className="text-whitesmoke">Faça login</h3>
-          <p className="text-whitesmoke">Na maior plataforma de Free-Fire!</p>
-          <div className="container-content">
-            <form className="margin-t">
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Username"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="*****"
-                  required
-                />
-              </div>
-              <button type="submit" className="form-button button-l margin-b">
-                Entrar
-              </button>
-              <a className="text-darkyellow" href="/forgot">
-                <small>Perdeu sua senha?</small>
-              </a>
-              <p className="text-whitesmoke text-center">
-                <small>Você ainda não tem uma conta?</small>
-              </p>
-              <a className="text-darkyellow" href="/sign-up">
-                <small>Registrar</small>
-              </a>
-            </form>
-            <p className="margin-t text-whitesmoke">
-              <small> Versus One © 2021</small>{' '}
-            </p>
-          </div>
+        <div className="wrap-login100">
+          <Tilt className="login100-pic js-tilt">
+            <img src={LoginImage} alt="Login" />
+          </Tilt>
+
+          <form className="login100-form validate-form">
+            <span className="login100-form-title">Área de Membros</span>
+            <div
+              className="wrap-input100 validate-input"
+              data-validate="Valid email is required: ex@abc.xyz"
+            >
+              <input
+                className="input100"
+                type="text"
+                name="email"
+                placeholder="Email"
+              />
+              <span className="focus-input100" />
+              <span className="symbol-input100">
+                <i className="fa fa-envelope" aria-hidden="true" />
+              </span>
+            </div>
+            <div
+              className="wrap-input100 validate-input"
+              data-validate="Password is required"
+            >
+              <input
+                className="input100"
+                type="password"
+                name="pass"
+                placeholder="Password"
+              />
+              <span className="focus-input100" />
+              <span className="symbol-input100">
+                <i className="fa fa-lock" aria-hidden="true" />
+              </span>
+            </div>
+            <div className="container-login100-form-btn">
+              <button className="login100-form-btn">Login</button>
+            </div>
+            <div className="text-center p-t-12">
+              <Link className="txt1" to="#">
+                Perdeu sua senha?
+              </Link>
+            </div>
+            <div className="text-center p-t-136">
+              <Link className="txt2" to="#">
+                Ainda não tem uma conta? Criar agora
+              </Link>
+            </div>
+          </form>
         </div>
       </article>
     </Content>

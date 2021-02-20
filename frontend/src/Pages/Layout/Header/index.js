@@ -105,6 +105,15 @@ const Header = () => {
                 <span className="title">Inicio</span>
               </Link>
             </li>
+
+            <li
+              id="menu-item-188"
+              className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"
+            >
+              <Link to="/">
+                <span className="title">Feed</span>
+              </Link>
+            </li>
             <li
               id="menu-item-191"
               className="menu-item menu-item-type-post_type menu-item-object-page"
@@ -125,7 +134,7 @@ const Header = () => {
               id="menu-item-190"
               className="menu-item menu-item-type-post_type menu-item-object-page"
             >
-              <Link to="#">
+              <Link to="/teams">
                 <span className="title">Seu Time</span>
               </Link>
             </li>

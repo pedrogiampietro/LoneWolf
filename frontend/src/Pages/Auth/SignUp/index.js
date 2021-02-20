@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Content from '../../Layout/Content';
-import '../styles.css';
+import './styles.css';
 
 const SignUp = () => {
   return (
@@ -40,7 +40,7 @@ const SignUp = () => {
                   type="password"
                   className="form-control"
                   placeholder="Confirme seu password"
-                  required
+                  requiredthemeforest
                 />
               </div>
               <button type="submit" className="form-button button-l margin-b">
@@ -51,7 +51,7 @@ const SignUp = () => {
               </Link>
             </form>
             <p className="margin-t text-whitesmoke">
-              <small> Versus One © 2021</small>{' '}
+              <small> Versus One © 2021</small>
             </p>
           </div>
         </div>
