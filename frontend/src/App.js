@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Layout from './Pages/Layout';
+import SignIn from './Pages/Auth/SignIn';
+import SignUp from './Pages/Auth/SignUp';
 
 import './assets/css/font-awesome.min.css';
 import './assets/css/bootstrap.min.css';
@@ -17,6 +19,8 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Layout} />
+          <Route exact path="/sign-in" component={SignIn} />
+          <Route exact path="/sign-up" component={SignUp} />
         </Switch>
       </BrowserRouter>
     </>

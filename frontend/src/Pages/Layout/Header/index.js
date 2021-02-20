@@ -16,28 +16,28 @@ const Header = () => {
           >
             <i className="fa fa-search" />
           </a>
-          <Link to="https://facebook.com/pixiesquad">
+          <Link to="#">
             <i className="fa fa-facebook" />
           </Link>
-          <Link to="https://twitter.com/PixieSquadTheme">
+          <Link to="#">
             <i className="fa fa-twitter" />
           </Link>
-          <Link to="https://www.instagram.com/pixiesquadstudio/">
+          <Link to="#">
             <i className="fa fa-instagram" />
           </Link>
-          <Link to="https://www.youtube.com/channel/UCOgbPXMkH0IpL-co4X6T1Qg/featured">
+          <Link to="#">
             <i className="fa fa-youtube" />
           </Link>
-          <Link to="https://facebook.com/pixiesquad">
+          <Link to="#">
             <i className="fa fa-twitch" />
           </Link>
-          <Link to="https://facebook.com/pixiesquad">
+          <Link to="#">
             <i className="fa fa-vimeo" />
           </Link>
-          <Link to="https://facebook.com/pixiesquad">
+          <Link to="#">
             <i className="fa fa-steam" />
           </Link>
-          <Link to="https://facebook.com/pixiesquad" className="last">
+          <Link to="#" className="last">
             <svg
               id="icon-discord"
               xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ const Header = () => {
               style={{
                 backgroundImage: `url(${Logo})`,
               }}
-              to="http://themes.pixiesquad.com/pixiehuge/purple-haste/"
+              to="/"
             ></Link>
           </div>
           {/* /LOGO-BG */}
@@ -101,7 +101,7 @@ const Header = () => {
               id="menu-item-188"
               className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"
             >
-              <Link to="http://themes.pixiesquad.com/pixiehuge/purple-haste/">
+              <Link to="/">
                 <span className="title">Inicio</span>
               </Link>
             </li>
@@ -109,7 +109,7 @@ const Header = () => {
               id="menu-item-191"
               className="menu-item menu-item-type-post_type menu-item-object-page"
             >
-              <Link to="http://themes.pixiesquad.com/pixiehuge/purple-haste/news/">
+              <Link to="#">
                 <span className="title">Atualizações rápidas</span>
               </Link>
             </li>
@@ -117,7 +117,7 @@ const Header = () => {
               id="menu-item-189"
               className="menu-item menu-item-type-post_type menu-item-object-page"
             >
-              <Link to="http://themes.pixiesquad.com/pixiehuge/purple-haste/all-matches/">
+              <Link to="#">
                 <span className="title">Campeonatos</span>
               </Link>
             </li>
@@ -125,7 +125,7 @@ const Header = () => {
               id="menu-item-190"
               className="menu-item menu-item-type-post_type menu-item-object-page"
             >
-              <Link to="http://themes.pixiesquad.com/pixiehuge/purple-haste/all-teams/">
+              <Link to="#">
                 <span className="title">Seu Time</span>
               </Link>
             </li>
@@ -133,11 +133,11 @@ const Header = () => {
               id="menu-item-192"
               className="menu-item menu-item-type-post_type menu-item-object-page"
             >
-              <Link to="http://themes.pixiesquad.com/pixiehuge/purple-haste/aboutus/">
+              <Link to="#">
                 <span className="title">Sobre nós</span>
               </Link>
             </li>
-            <Link to="https://support.pixiesquad.com/login" class="login-btn">
+            <Link to="/sign-in" class="login-btn">
               Login
             </Link>
           </ul>
