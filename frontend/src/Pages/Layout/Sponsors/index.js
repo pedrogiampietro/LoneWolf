@@ -1,11 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Sponsors = () => {
+  const [active, setActive] = useState(0);
+  const [position, setPosition] = useState(0);
+  const contentRef = useRef();
+
+  useEffect(() => {
+    const { width } = contentRef.current.getBoundingClientRect();
+    setPosition(-(width * active));
+  }, [active]);
+
+  function slidePrev() {
+    if (active > 0) setActive(active - 1);
+  }
+
+  function slideNext() {
+    if (active < 2) setActive(active + 1);
+  }
+
   return (
     <section id="sponsors">
       <div className="container">
-        <span className="leftArrow">
+        <span
+          className="leftArrow"
+          onClick={slidePrev}
+          style={{ display: active >= 1 ? "block" : "none" }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -20,9 +41,16 @@ const Sponsors = () => {
             ></path>
           </svg>
         </span>
-        <div className="owl-carousel owl-loaded owl-drag">
+        <div className="owl-carousel owl-loaded owl-drag" ref={contentRef}>
           <div className="owl-stage-outer">
-            <div className="owl-stage" style={{ left: '-1270px', width: 4064 }}>
+            <div
+              style={{
+                transform: `translateX(${position}px)`,
+                display: "flex",
+                flex: "1",
+                transition: "all .3s ease",
+              }}
+            >
               <div
                 className="owl-item cloned"
                 style={{ width: 154, marginRight: 100 }}
@@ -145,6 +173,17 @@ const Sponsors = () => {
                 </Link>
               </div>
               <div
+                className="owl-item"
+                style={{ width: 154, marginRight: 100 }}
+              >
+                <Link to="/">
+                  <img
+                    src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/1.png"
+                    alt="Upload"
+                  />
+                </Link>
+              </div>
+              <div
                 className="owl-item cloned"
                 style={{ width: 154, marginRight: 100 }}
               >
@@ -202,7 +241,11 @@ const Sponsors = () => {
             </div>
           </div>
         </div>
-        <span className="rightArrow">
+        <span
+          className="rightArrow"
+          onClick={slideNext}
+          style={{ display: active === 2 ? "none" : "block" }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
