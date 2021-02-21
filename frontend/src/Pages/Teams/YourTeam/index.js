@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Content from '../Layout/Content';
+import Content from '../../Layout/Content';
 
 const Team = () => {
   return (

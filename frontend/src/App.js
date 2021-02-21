@@ -5,10 +5,11 @@ import Layout from './Pages/Layout';
 import SignIn from './Pages/Auth/SignIn';
 import SignUp from './Pages/Auth/SignUp';
 // import Dashboard from './Pages/Dashboard';
-import Team from './Pages/YourTeam';
+import AllTeams from './Pages/Teams/AllTeams';
+import CreateTeam from './Pages/Teams/CreateTeam';
 
 import './assets/css/font-awesome.min.css';
-import './assets/css/bootstrap.min.css';
+import './assets/css/bootstrap.css';
 import './assets/css/flag-icon.min.css';
 import './assets/css/owl.carousel.min.css';
 import './assets/css/chosen.min.css';
@@ -24,7 +25,8 @@ function App() {
           <Route exact path="/sign-in" component={SignIn} />
           <Route exact path="/sign-up" component={SignUp} />
           {/* <Route exact path="/dashboard" component={Dashboard} /> */}
-          <Route exact path="/teams" component={Team} />
+          <Route exact path="/teams" component={AllTeams} />
+          <Route exact path="/teams/create" component={CreateTeam} />
         </Switch>
       </BrowserRouter>
     </>

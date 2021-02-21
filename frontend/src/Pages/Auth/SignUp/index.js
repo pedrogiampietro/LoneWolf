@@ -23,13 +23,17 @@ const SignUp = () => {
     dispatch(signUp(data))
       .then(() => {})
       .catch((err) => {
-        const metadata = err.response.data.metadata;
-        const message = err.response.data.message;
-        const convertObjToArray = Object.entries(metadata).length; // verify if have metadata
-        const metadataError = Object.entries(metadata.error); //recovery dates to impress in Error.
+        const verifyMetadata = err.response.data.metadata;
+        const defaultMessage = err.response.data.message;
+        const specificErrorMessage = err.response.data.data;
+        const convertObjToArray = Object.entries(verifyMetadata).length; // check quantity for comparison
+        const checkQuantityItem = err.response.data.data.length;
+        const metadataError = Object.entries(verifyMetadata); // take the last element of the object to pass
 
-        if (convertObjToArray === 0) {
-          setError(message);
+        if (checkQuantityItem > 0) {
+          setError(specificErrorMessage);
+        } else if (convertObjToArray === 0) {
+          setError(defaultMessage);
         } else {
           setError(metadataError[0][1]);
           setLoading(false);
@@ -88,7 +92,23 @@ const SignUp = () => {
                   className="input100"
                   type="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder="Senha"
+                />
+                <span className="focus-input100" />
+                <span className="symbol-input100">
+                  <i className="fa fa-lock" aria-hidden="true" />
+                </span>
+              </div>
+
+              <div
+                className="wrap-input100 validate-input"
+                data-validate="Password is required"
+              >
+                <input
+                  className="input100"
+                  type="password"
+                  name="password_confirmation"
+                  placeholder="Confirme sua Senha"
                 />
                 <span className="focus-input100" />
                 <span className="symbol-input100">

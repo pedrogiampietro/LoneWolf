@@ -11,7 +11,7 @@ const Content = ({ children }) => {
     const { pathname } = location;
 
     switch (pathname) {
-      case '/teams':
+      case '/test':
         setBackground(
           'http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/cover-team-2.jpg'
         );
