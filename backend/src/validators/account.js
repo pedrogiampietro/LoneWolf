@@ -3,7 +3,7 @@ const { defaultOptions } = './default';
 const { getValidatorError } = require('../helpers/validator');
 
 const rules = {
-  nickname: Joi.string().min(6).max(30).required(),
+  nickname: Joi.string().min(5).max(30).required(),
   email: Joi.string().email().required(),
   password: Joi.string().alphanum().min(3).max(30).required(),
   password_confirmation: Joi.string().valid(Joi.ref('password')).required(),

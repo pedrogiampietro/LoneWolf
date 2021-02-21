@@ -24,7 +24,7 @@
   "account.signup.password_confirmation.any.only": "Confirmação de senha deve ser igual à senha escolhida.",
   "account.signup.password.string.empty": "Campo senha é obrigatório.",
   "account.signup.password.string.pattern.base": "Senha deve ter de 3 à 30 caracteres.",
-  "account.signup.nickname.string.min": "Seu apelido deve ter de 3 à 30 caracteres.",
+  "account.signup.nickname.string.min": "Seu apelido deve ter de 5 à 30 caracteres.",
   "account.signup.password.string.min": "Senha deve ter de 3 à 30 caracteres.",
 
   "account.forgot_password.sucess": "Your email with a recovery token was sent successfully.",
