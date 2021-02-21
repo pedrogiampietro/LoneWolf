@@ -1,14 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { SiGnuprivacyguard } from 'react-icons/si';
+import { signUp } from '../../../actions/AccountActions';
+import { getFormData } from '../../../helpers/FormData';
 
 import Content from '../../Layout/Content';
 import Button from '../../../components/Button';
+import Error from '../../../components/Error';
 import './styles.css';
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+
   const [error, setError] = React.useState();
   const [loading, setLoading] = React.useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setLoading(true);
+    const data = getFormData(event);
+    dispatch(signUp(data))
+      .then(() => {})
+      .catch((err) => {
+        const metadata = err.response.data.metadata;
+        const message = err.response.data.message;
+        const convertObjToArray = Object.entries(metadata).length; // verify if have metadata
+        const metadataError = Object.entries(metadata.error); //recovery dates to impress in Error.
+
+        if (convertObjToArray === 0) {
+          setError(message);
+        } else {
+          setError(metadataError[0][1]);
+          setLoading(false);
+        }
+      });
+  };
 
   return (
     <Content>
@@ -23,7 +50,7 @@ const SignUp = () => {
           <h3 className="text-whitesmoke">Faça seu registro</h3>
           <p className="text-whitesmoke">Na maior plataforma de Free-Fire!</p>
           <div className="container-content">
-            <form className="margin-t">
+            <form className="margin-t" onSubmit={handleSubmit}>
               <div className="wrap-input100 validate-input">
                 <input
                   className="input100"
@@ -68,14 +95,14 @@ const SignUp = () => {
                   <i className="fa fa-lock" aria-hidden="true" />
                 </span>
               </div>
-
+              <Error error={error} />
               <Button
                 className="login100-form-btn"
                 type="submit"
                 disabled={loading ? true : false}
               >
                 <SiGnuprivacyguard size={20} className="mr-3" />
-                {loading ? 'Carregando... ' : 'Entrar'}
+                {loading ? 'Carregando... ' : 'Registrar'}
               </Button>
               <Link className="text-darkyellow" to="/sign-in">
                 <span className="txt2">Já tem uma conta? Faça Login</span>
