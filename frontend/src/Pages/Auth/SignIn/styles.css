@@ -372,7 +372,6 @@ iframe {
   }
 }
 
-.teste {
-  will-change: transform;
-  transform: perspective(300px) rotateX(0deg) rotateY(0deg);
+.mr-3 {
+  margin-right: 10px;
 }

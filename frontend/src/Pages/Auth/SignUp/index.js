@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SiGnuprivacyguard } from 'react-icons/si';
 
 import Content from '../../Layout/Content';
+import Button from '../../../components/Button';
 import './styles.css';
 
 const SignUp = () => {
+  const [error, setError] = React.useState();
+  const [loading, setLoading] = React.useState(false);
+
   return (
     <Content>
       {/* /SECTION-HEADER */}
@@ -19,39 +24,65 @@ const SignUp = () => {
           <p className="text-whitesmoke">Na maior plataforma de Free-Fire!</p>
           <div className="container-content">
             <form className="margin-t">
-              <div className="form-group">
+              <div className="wrap-input100 validate-input">
                 <input
+                  className="input100"
                   type="text"
-                  className="form-control"
+                  name="nickname"
                   placeholder="Seu apelido"
-                  required
                 />
+                <span className="focus-input100" />
+                <span className="symbol-input100">
+                  <i className="fa fa-user" aria-hidden="true" />
+                </span>
               </div>
-              <div className="form-group">
+
+              <div
+                className="wrap-input100 validate-input"
+                data-validate="Valid email is required: ex@abc.xyz"
+              >
                 <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Seu password"
-                  required
+                  className="input100"
+                  type="text"
+                  name="email"
+                  placeholder="Email"
                 />
+                <span className="focus-input100" />
+                <span className="symbol-input100">
+                  <i className="fa fa-envelope" aria-hidden="true" />
+                </span>
               </div>
-              <div className="form-group">
+
+              <div
+                className="wrap-input100 validate-input"
+                data-validate="Password is required"
+              >
                 <input
+                  className="input100"
                   type="password"
-                  className="form-control"
-                  placeholder="Confirme seu password"
-                  requiredthemeforest
+                  name="password"
+                  placeholder="Password"
                 />
+                <span className="focus-input100" />
+                <span className="symbol-input100">
+                  <i className="fa fa-lock" aria-hidden="true" />
+                </span>
               </div>
-              <button type="submit" className="form-button button-l margin-b">
-                Registrar
-              </button>
+
+              <Button
+                className="login100-form-btn"
+                type="submit"
+                disabled={loading ? true : false}
+              >
+                <SiGnuprivacyguard size={20} className="mr-3" />
+                {loading ? 'Carregando... ' : 'Entrar'}
+              </Button>
               <Link className="text-darkyellow" to="/sign-in">
-                <small>Já tem uma conta? Faça Login</small>
+                <span className="txt2">Já tem uma conta? Faça Login</span>
               </Link>
             </form>
             <p className="margin-t text-whitesmoke">
-              <small> Versus One © 2021</small>
+              <span> Versus One © 2021</span>
             </p>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Content from '../Layout/Content';
 
@@ -17,7 +18,10 @@ const Team = () => {
             />
             <div className="profile-details">
               <figure>
-                <img src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/logo2.png" />
+                <img
+                  src="http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/logo2.png"
+                  alt="Logo"
+                />
               </figure>
               <div className="name">
                 <h4>Midnight Turtles</h4>
@@ -143,6 +147,303 @@ const Team = () => {
             {/* /ACHIEVEMENT */}
           </ul>
         </div>
+      </section>
+      <section id="matchRoster" className="noNav">
+        <div className="container">
+          <div className="section-header">
+            <article className="topbar">
+              <h3>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  width="7px"
+                  height="8px"
+                >
+                  <path
+                    fillRule="evenodd"
+                    fill="rgb(57, 191, 253)"
+                    d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"
+                  />
+                </svg>{' '}
+                Our Players{' '}
+              </h3>
+            </article>
+            {/* /TOP-BAR */}
+          </div>
+          {/* /SECTION-HEADER */}
+          <div className="tab-content content">
+            <ul className="roster active">
+              <li
+                style={{
+                  backgroundImage:
+                    'url("http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/Player-Profile.jpg")',
+                }}
+              >
+                <div className="details">
+                  <h4>Rilee </h4>
+                  <span className="role">Team Lead </span>
+                </div>
+                <div className="overlay">
+                  <ul>
+                    <li className="firstname">Ricardo </li>
+                    <li className="lastname">Lee </li>
+                    <li className="nickname">Rilee </li>
+                    <li className="role">Team Lead </li>
+                  </ul>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-facebook" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-twitter" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-instagram" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-twitch" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-steam" />
+                  </Link>
+                  <Link
+                    to="http://themes.pixiesquad.com/pixiehuge/purple-haste/player/rilee"
+                    className="player-cta"
+                  >
+                    SEE PROFILE{' '}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                      width="9px"
+                      height="8px"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        fill="rgb(0, 0, 0)"
+                        d="M4.700,0.183 C4.449,0.444 4.449,0.867 4.700,1.128 L6.817,3.327 L0.654,3.327 C0.298,3.327 0.011,3.626 0.011,3.995 C0.011,4.363 0.298,4.662 0.654,4.662 L6.817,4.662 L4.700,6.862 C4.449,7.123 4.449,7.545 4.700,7.806 C4.951,8.067 5.358,8.067 5.609,7.806 L8.824,4.467 C8.940,4.346 9.013,4.179 9.013,3.995 C9.013,3.810 8.940,3.643 8.824,3.522 L5.609,0.183 C5.358,-0.077 4.951,-0.077 4.700,0.183 Z"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </li>
+              {/* /PLAYER */}
+              <li
+                style={{
+                  backgroundImage:
+                    'url("http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/player-profile.jpg")',
+                }}
+              >
+                <div className="details">
+                  <h4>Hubo99 </h4>
+                  <span className="role">Strategier </span>
+                </div>
+                <div className="overlay">
+                  <ul>
+                    <li className="firstname">Gabrie </li>
+                    <li className="lastname">Higgins </li>
+                    <li className="nickname">Hubo99 </li>
+                    <li className="role">Strategier </li>
+                  </ul>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-facebook" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-twitter" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-instagram" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-twitch" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-steam" />
+                  </Link>
+                  <Link
+                    to="http://themes.pixiesquad.com/pixiehuge/purple-haste/player/hubo99"
+                    className="player-cta"
+                  >
+                    SEE PROFILE{' '}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                      width="9px"
+                      height="8px"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        fill="rgb(0, 0, 0)"
+                        d="M4.700,0.183 C4.449,0.444 4.449,0.867 4.700,1.128 L6.817,3.327 L0.654,3.327 C0.298,3.327 0.011,3.626 0.011,3.995 C0.011,4.363 0.298,4.662 0.654,4.662 L6.817,4.662 L4.700,6.862 C4.449,7.123 4.449,7.545 4.700,7.806 C4.951,8.067 5.358,8.067 5.609,7.806 L8.824,4.467 C8.940,4.346 9.013,4.179 9.013,3.995 C9.013,3.810 8.940,3.643 8.824,3.522 L5.609,0.183 C5.358,-0.077 4.951,-0.077 4.700,0.183 Z"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </li>
+              {/* /PLAYER */}
+              <li
+                style={{
+                  backgroundImage:
+                    'url("http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/Player-Profile-1.jpg")',
+                }}
+              >
+                <div className="details">
+                  <h4>Milex </h4>
+                  <span className="role">Jumper </span>
+                </div>
+                <div className="overlay">
+                  <ul>
+                    <li className="firstname">Andres </li>
+                    <li className="lastname">Miles </li>
+                    <li className="nickname">Milex </li>
+                    <li className="role">Jumper </li>
+                  </ul>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-facebook" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-twitter" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-instagram" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-twitch" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-steam" />
+                  </Link>
+                  <Link
+                    to="http://themes.pixiesquad.com/pixiehuge/purple-haste/player/milex"
+                    className="player-cta"
+                  >
+                    SEE PROFILE{' '}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                      width="9px"
+                      height="8px"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        fill="rgb(0, 0, 0)"
+                        d="M4.700,0.183 C4.449,0.444 4.449,0.867 4.700,1.128 L6.817,3.327 L0.654,3.327 C0.298,3.327 0.011,3.626 0.011,3.995 C0.011,4.363 0.298,4.662 0.654,4.662 L6.817,4.662 L4.700,6.862 C4.449,7.123 4.449,7.545 4.700,7.806 C4.951,8.067 5.358,8.067 5.609,7.806 L8.824,4.467 C8.940,4.346 9.013,4.179 9.013,3.995 C9.013,3.810 8.940,3.643 8.824,3.522 L5.609,0.183 C5.358,-0.077 4.951,-0.077 4.700,0.183 Z"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </li>
+              {/* /PLAYER */}
+              <li
+                style={{
+                  backgroundImage:
+                    'url("http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/player-profile-1.jpg")',
+                }}
+              >
+                <div className="details">
+                  <h4>Pitbull </h4>
+                  <span className="role">Shooter </span>
+                </div>
+                <div className="overlay">
+                  <ul>
+                    <li className="firstname">Johnnie </li>
+                    <li className="lastname">Pittman </li>
+                    <li className="nickname">Pitbull </li>
+                    <li className="role">Shooter </li>
+                  </ul>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-facebook" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-twitter" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-instagram" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-twitch" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-steam" />
+                  </Link>
+                  <Link
+                    to="http://themes.pixiesquad.com/pixiehuge/purple-haste/player/pitbull"
+                    className="player-cta"
+                  >
+                    SEE PROFILE{' '}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                      width="9px"
+                      height="8px"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        fill="rgb(0, 0, 0)"
+                        d="M4.700,0.183 C4.449,0.444 4.449,0.867 4.700,1.128 L6.817,3.327 L0.654,3.327 C0.298,3.327 0.011,3.626 0.011,3.995 C0.011,4.363 0.298,4.662 0.654,4.662 L6.817,4.662 L4.700,6.862 C4.449,7.123 4.449,7.545 4.700,7.806 C4.951,8.067 5.358,8.067 5.609,7.806 L8.824,4.467 C8.940,4.346 9.013,4.179 9.013,3.995 C9.013,3.810 8.940,3.643 8.824,3.522 L5.609,0.183 C5.358,-0.077 4.951,-0.077 4.700,0.183 Z"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </li>
+              {/* /PLAYER */}
+              <li
+                style={{
+                  backgroundImage:
+                    'url("http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/Player-Profile.jpg")',
+                }}
+              >
+                <div className="details">
+                  <h4>Rilee </h4>
+                  <span className="role">Ingame Rifler </span>
+                </div>
+                <div className="overlay">
+                  <ul>
+                    <li className="firstname">Ricardo </li>
+                    <li className="lastname">Lee </li>
+                    <li className="nickname">Rilee </li>
+                    <li className="role">Ingame Rifler </li>
+                  </ul>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-facebook" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-twitter" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-instagram" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-twitch" />
+                  </Link>
+                  <Link to="https://facebook.com/pixiesquad">
+                    <i className="fa fa-steam" />
+                  </Link>
+                  <Link
+                    to="http://themes.pixiesquad.com/pixiehuge/purple-haste/player/rilee2"
+                    className="player-cta"
+                  >
+                    SEE PROFILE{' '}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                      width="9px"
+                      height="8px"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        fill="rgb(0, 0, 0)"
+                        d="M4.700,0.183 C4.449,0.444 4.449,0.867 4.700,1.128 L6.817,3.327 L0.654,3.327 C0.298,3.327 0.011,3.626 0.011,3.995 C0.011,4.363 0.298,4.662 0.654,4.662 L6.817,4.662 L4.700,6.862 C4.449,7.123 4.449,7.545 4.700,7.806 C4.951,8.067 5.358,8.067 5.609,7.806 L8.824,4.467 C8.940,4.346 9.013,4.179 9.013,3.995 C9.013,3.810 8.940,3.643 8.824,3.522 L5.609,0.183 C5.358,-0.077 4.951,-0.077 4.700,0.183 Z"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </li>
+              {/* /PLAYER */}
+            </ul>
+            {/* /TEAM */}
+          </div>
+          {/* /CONTENT */}
+        </div>
+        {/* /CONTAINER */}
       </section>
     </Content>
   );

@@ -146,7 +146,7 @@ const Header = () => {
                 <span className="title">Sobre nós</span>
               </Link>
             </li>
-            <Link to="/sign-in" class="login-btn">
+            <Link to="/sign-in" className="login-btn">
               Login
             </Link>
           </ul>
