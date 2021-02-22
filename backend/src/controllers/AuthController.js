@@ -31,8 +31,8 @@ const router = express.Router();
 const saltRounds = 10;
 
 router.post('/sign-in', validateAccountSignIn, async (req, res) => {
-  const { name, password } = req.body;
-  const findAccount = await Accounts.findOne({ where: { name } });
+  const { email, password } = req.body;
+  const findAccount = await Accounts.findOne({ where: { email } });
 
   const match = findAccount
     ? bcrypt.compareSync(password, findAccount.password)
