@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-  const Account = sequelize.define(
-    'Account',
+  const Accounts = sequelize.define(
+    'Accounts',
     {
       nickname: {
         type: DataTypes.STRING,
@@ -29,11 +29,11 @@ module.exports = (sequelize, DataTypes) => {
     { freezeTableName: true }
   );
 
-  Account.prototype.toJSON = function () {
+  Accounts.prototype.toJSON = function () {
     const values = { ...this.get() };
     delete values.password;
     return values;
   };
 
-  return Account;
+  return Accounts;
 };

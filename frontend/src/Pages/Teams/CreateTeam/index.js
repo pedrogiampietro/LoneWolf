@@ -2,11 +2,39 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Content from '../../Layout/Content';
+import Button from '../../../components/Button';
 import NoShield from '../../../assets/img/no-shield.svg';
 import NoAvatar from '../../../assets/img/no-avatar.png';
 import './styles.css';
 
 const CreateTeam = () => {
+  const [name, setName] = React.useState('');
+  const [description, setDescription] = React.useState('');
+  const [image, setImage] = React.useState('');
+  const [imagePreview, setImagePreview] = React.useState('');
+  const [loading, setLoading] = React.useState(false);
+
+  const date = new Date().toLocaleDateString();
+
+  const handleSelectImages = (event) => {
+    if (!event.target.files) {
+      return;
+    }
+
+    const selectedImage = event.target.files[0];
+    setImage(selectedImage);
+    const preview = URL.createObjectURL(selectedImage);
+    setImagePreview(preview);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('description', description);
+    formData.append('image', image);
+  };
+
   return (
     <Content>
       <div className="container split-flex">
@@ -14,7 +42,11 @@ const CreateTeam = () => {
           {/* /CONTENT */}
           <article className="comments">
             <div id="respond" className="comment-respond">
-              <h3 id="reply-title" className="comment-reply-title" />
+              <h3
+                id="reply-title"
+                className="comment-reply-title"
+                aria-hidden="true"
+              />
               <h3>Criar seu Time</h3>
               <small>
                 <a
@@ -26,12 +58,7 @@ const CreateTeam = () => {
                   Cancel Reply
                 </a>
               </small>
-              <form
-                action="http://themes.pixiesquad.com/pixiehuge/purple-haste/wp-comments-post.php"
-                method="post"
-                id="commentform"
-                className="comment-form"
-              >
+              <form onSubmit={handleSubmit}>
                 <p>
                   1. Você não pode reproduzir o conteúdo de outras equipes
                   listadas ou não na Playerlink.
@@ -39,21 +66,41 @@ const CreateTeam = () => {
                   outro.
                 </p>
 
-                <input type="text" name="name" placeholder="Nome*" />
                 <input
+                  className="input100"
+                  type="text"
+                  name="name"
+                  placeholder="Nome*"
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                  className="input100"
                   type="text"
                   name="description"
                   placeholder="Descrição*"
+                  onChange={(e) => setDescription(e.target.value)}
                 />
 
-                <div class="custom-file">
+                <div className="custom-file">
                   <input
                     type="file"
-                    class="custom-file-input"
+                    className="custom-file-input"
                     id="customFile"
+                    accept="image/*"
+                    onChange={handleSelectImages}
                   />
                 </div>
-              </form>{' '}
+
+                <div className="container-login100-form-btn">
+                  <Button
+                    className="login100-form-btn"
+                    type="submit"
+                    disabled={loading ? true : false}
+                  >
+                    {loading ? 'Carregando... ' : 'Registrar'}
+                  </Button>
+                </div>
+              </form>
             </div>
             {/* #respond */}
           </article>
@@ -64,19 +111,29 @@ const CreateTeam = () => {
           <article>
             <ul className="widget">
               <li>
-                <img
-                  className="img-fluid noShield"
-                  src={NoShield}
-                  alt="NoShield"
-                />
+                {imagePreview === null || imagePreview === '' ? (
+                  <img
+                    className="img-fluid noShield"
+                    src={NoShield}
+                    alt="NoShield"
+                  />
+                ) : (
+                  <img
+                    className="img-fluid noShield mr-3"
+                    src={imagePreview}
+                    alt="NoShield"
+                  />
+                )}
+
                 <div className="details">
                   <span className="categories">
                     <span className="category"></span>
                   </span>
                   <Link to="#" className="title">
-                    NAME TEAM
+                    <h3>{name}</h3>
                   </Link>
-                  <span className="date">Created in 21/02/2021</span>
+                  <span className="badge primary">{description}</span>
+                  <span className="date">{name ? date : null}</span>
                 </div>
               </li>
 

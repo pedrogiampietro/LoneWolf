@@ -45,9 +45,9 @@ const AllTeams = () => {
           </div>
 
           <div class="d-flex justify-content-end mb-4">
-            <div class="mr-auto p-2">
+            <Link to="/teams/create" class="mr-auto p-2">
               <button className="login-btn text-white">Criar Time</button>
-            </div>
+            </Link>
             <div class="p-2">
               <button className="login-btn text-white">Buscar</button>
             </div>
