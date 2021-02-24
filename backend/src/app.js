@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const db = require('./models');
 const authController = require('./controllers/AuthController');
+const teamController = require('./controllers/TeamController');
 const response = require('./middlewares/response');
 const path = require('path');
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
 app.use('/auth', authController);
+app.use('/team', teamController);
 
 app.get('/', (req, res) => {
   return res.json('OK');

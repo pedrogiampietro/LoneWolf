@@ -7,12 +7,17 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       subtitle: {
-        type: DataTypes.DATE,
-        select: false,
+        type: DataTypes.STRING,
+        defaultValue: '',
+        allowNull: false,
       },
-      ownerId: {
+      owner_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        references: {
+          model: 'Accounts',
+          key: 'id',
+        },
       },
       logo: {
         type: DataTypes.STRING,
@@ -20,27 +25,31 @@ module.exports = (sequelize, DataTypes) => {
       },
       cover: {
         type: DataTypes.STRING,
+        defaultValue: '',
         allowNull: false,
       },
       description: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       camps: {
-        type: DataTypes.STRING,
-        select: false,
+        type: DataTypes.JSON,
+        defaultValue: [],
       },
       victory: {
-        type: DataTypes.DATE,
-        select: false,
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
+        allowNull: false,
       },
       losses: {
-        type: DataTypes.DATE,
-        select: false,
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
+        allowNull: false,
       },
       country: {
-        type: DataTypes.DATE,
-        select: false,
+        type: DataTypes.STRING,
+        defaultValue: '',
+        allowNull: false,
       },
     },
     { freezeTableName: true }
@@ -48,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Teams.associate = (models) => {
     // Team.hasMany(models.Team_Member, { foreignKey: 'teamId' });
-    Teams.belongsTo(models.Accounts, { foreignKey: 'accountId' });
+    Teams.belongsTo(models.Accounts, { foreignKey: 'owner_id' });
     // Team.hasMany(models.Team_Invite, { foreignKey: 'teamId' });
   };
 

@@ -33,7 +33,7 @@ const upload = multer({
 
 // File upload middleware (for menu pictures)
 const logoTeam = multer.diskStorage({
-  destination: 'uploads/teams/',
+  destination: 'uploads/teams/logo/',
   filename: (req, file, cb) => {
     const filename = file.originalname;
     const finalFileName = `logoTeam-${Date.now()}-${filename}`;

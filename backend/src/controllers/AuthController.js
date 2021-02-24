@@ -32,6 +32,7 @@ const saltRounds = 10;
 
 router.post('/sign-in', validateAccountSignIn, async (req, res) => {
   const { email, password } = req.body;
+
   const findAccount = await Accounts.findOne({ where: { email } });
 
   const match = findAccount
@@ -156,9 +157,9 @@ router.post('/forgot', async (req, res) => {
         template: 'auth/forgot_password',
         context: { forgotToken },
       },
-      (err) => {
-        console.log(err);
-        if (err)
+      (error) => {
+        console.log(error);
+        if (error)
           return res.jsonBadRequest(
             null,
             getMessage('response.json_server_error')

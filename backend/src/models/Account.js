@@ -25,9 +25,18 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         select: false,
       },
+      jwtVersion: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+      },
     },
     { freezeTableName: true }
   );
+
+  Accounts.associate = (models) => {
+    Accounts.hasMany(models.Teams, { foreignKey: 'owner_id' });
+  };
 
   Accounts.prototype.toJSON = function () {
     const values = { ...this.get() };

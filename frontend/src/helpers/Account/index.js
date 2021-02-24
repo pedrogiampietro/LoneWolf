@@ -1,4 +1,4 @@
-import { setCookie, getCookie, removeCookie } from './Storage';
+import { setCookie, getCookie, removeCookie } from '../Storage';
 
 const expires = new Date();
 expires.setFullYear(expires.getFullYear() + 1);
@@ -8,7 +8,6 @@ const options = { expires };
 export const COOKIE_ACCOUNT = 'acc';
 export const COOKIE_TOKEN = 'tk';
 export const COOKIE_REFRESH_TOKEN = 'rtk';
-export const COOKIE_PLAYER_NAME = 'pnm';
 
 export const setAccount = (account) =>
   setCookie(COOKIE_ACCOUNT, account, options);

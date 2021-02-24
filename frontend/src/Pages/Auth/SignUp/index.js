@@ -7,7 +7,7 @@ import { getFormData } from '../../../helpers/FormData';
 
 import Content from '../../Layout/Content';
 import Button from '../../../components/Button';
-import Error from '../../../components/Error';
+import Error from '../../../helpers/Error';
 import './styles.css';
 
 const SignUp = () => {
@@ -27,15 +27,16 @@ const SignUp = () => {
         const defaultMessage = err.response.data.message;
         const specificErrorMessage = err.response.data.data;
         const convertObjToArray = Object.entries(verifyMetadata).length; // check quantity for comparison
-        const checkQuantityItem = err.response.data.data.length;
-        const metadataError = Object.entries(verifyMetadata); // take the last element of the object to pass
+        const checkQuantityItem = err.response.data.length;
+        // const metadataError = Object.entries(verifyMetadata); // take the last element of the object to pass
 
         if (checkQuantityItem > 0) {
           setError(specificErrorMessage);
         } else if (convertObjToArray === 0) {
           setError(defaultMessage);
+          setLoading(false);
         } else {
-          setError(metadataError[0][1]);
+          setError(defaultMessage);
           setLoading(false);
         }
       });

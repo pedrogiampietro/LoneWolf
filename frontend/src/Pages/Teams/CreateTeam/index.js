@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { createNewTeam } from '../../../actions/TeamActions';
 
 import Content from '../../Layout/Content';
 import Button from '../../../components/Button';
@@ -8,32 +10,37 @@ import NoAvatar from '../../../assets/img/no-avatar.png';
 import './styles.css';
 
 const CreateTeam = () => {
+  const dispatch = useDispatch();
+  const { team } = useSelector((state) => state.team);
+
   const [name, setName] = React.useState('');
   const [description, setDescription] = React.useState('');
-  const [image, setImage] = React.useState('');
-  const [imagePreview, setImagePreview] = React.useState('');
+  const [logo, setLogo] = React.useState('');
+  const [LogoPreview, setLogoPreview] = React.useState('');
   const [loading, setLoading] = React.useState(false);
-
-  const date = new Date().toLocaleDateString();
 
   const handleSelectImages = (event) => {
     if (!event.target.files) {
       return;
     }
 
-    const selectedImage = event.target.files[0];
-    setImage(selectedImage);
-    const preview = URL.createObjectURL(selectedImage);
-    setImagePreview(preview);
+    const selectedLogo = event.target.files[0];
+    setLogo(selectedLogo);
+    const preview = URL.createObjectURL(selectedLogo);
+    setLogoPreview(preview);
   };
 
-  const handleSubmit = (event) => {
+  function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData();
     formData.append('name', name);
     formData.append('description', description);
-    formData.append('image', image);
-  };
+    formData.append('logo', logo)
+
+    createNewTeam(formData);
+  }
+
+  const date = new Date().toLocaleDateString();
 
   return (
     <Content>
@@ -111,7 +118,7 @@ const CreateTeam = () => {
           <article>
             <ul className="widget">
               <li>
-                {imagePreview === null || imagePreview === '' ? (
+                {LogoPreview === null || LogoPreview === '' ? (
                   <img
                     className="img-fluid noShield"
                     src={NoShield}
@@ -120,7 +127,7 @@ const CreateTeam = () => {
                 ) : (
                   <img
                     className="img-fluid noShield mr-3"
-                    src={imagePreview}
+                    src={LogoPreview}
                     alt="NoShield"
                   />
                 )}

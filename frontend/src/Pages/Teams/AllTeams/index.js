@@ -44,11 +44,11 @@ const AllTeams = () => {
             </span>
           </div>
 
-          <div class="d-flex justify-content-end mb-4">
-            <Link to="/teams/create" class="mr-auto p-2">
+          <div className="d-flex justify-content-end mb-4">
+            <Link to="/teams/create" className="mr-auto p-2">
               <button className="login-btn text-white">Criar Time</button>
             </Link>
-            <div class="p-2">
+            <div className="p-2">
               <button className="login-btn text-white">Buscar</button>
             </div>
           </div>

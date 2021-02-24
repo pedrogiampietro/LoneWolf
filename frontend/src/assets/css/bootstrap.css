@@ -1133,8 +1133,8 @@ img {
 
 .noShield {
   display: block;
-  max-width: 21%;
-  height: auto;
+  max-width: 84px;
+  max-height: 84px;
 }
 
 .img-rounded {

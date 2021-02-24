@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getToken, getRefreshToken } from './Account';
+import { getToken, getRefreshToken } from '../Account';
 
 export const getApiUrl = (path) => {
   return `http://localhost:3001${path}`;
@@ -19,7 +19,7 @@ export const getHeaders = () => {
 };
 
 export const apiRefreshToken = () => {
-  const url = getApiUrl('/auth/refresh');
+  const url = getApiUrl('/account/refresh');
   const refreshToken = getRefreshToken();
   const options = {
     headers: {
@@ -64,14 +64,4 @@ export const apiGet = async (path, params = {}) => {
   };
 
   return await axios.get(url, options);
-};
-
-export const apiPostAvatar = (path, data = {}) => {
-  const url = getApiUrl(path);
-  const options = {
-    headers: getHeaders(),
-    'content-type': 'multipart/form-data',
-  };
-
-  return axios.post(url, data, options);
 };

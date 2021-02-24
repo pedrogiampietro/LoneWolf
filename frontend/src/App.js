@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { initAccount } from './actions/AccountActions';
 
 import Layout from './Pages/Layout';
 import SignIn from './Pages/Auth/SignIn';
@@ -7,6 +9,8 @@ import SignUp from './Pages/Auth/SignUp';
 // import Dashboard from './Pages/Dashboard';
 import AllTeams from './Pages/Teams/AllTeams';
 import CreateTeam from './Pages/Teams/CreateTeam';
+
+import ProtectedRoute from './helpers/ProtectedRoute';
 
 import './assets/css/font-awesome.min.css';
 import './assets/css/bootstrap.css';
@@ -16,7 +20,11 @@ import './assets/css/chosen.min.css';
 import './assets/css/main.css';
 import './assets/css/responsive.css';
 
-function App() {
+const App = ({ initAccount }) => {
+  useEffect(() => {
+    initAccount();
+  }, [initAccount]);
+
   return (
     <>
       <BrowserRouter>
@@ -26,11 +34,19 @@ function App() {
           <Route exact path="/sign-up" component={SignUp} />
           {/* <Route exact path="/dashboard" component={Dashboard} /> */}
           <Route exact path="/teams" component={AllTeams} />
-          <Route exact path="/teams/create" component={CreateTeam} />
+
+          {/* Protected Routes */}
+          <ProtectedRoute exact path="/teams/create" component={CreateTeam} />
         </Switch>
       </BrowserRouter>
     </>
   );
-}
+};
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    account: state.account.account,
+  };
+};
+
+export default connect(mapStateToProps, { initAccount })(App);

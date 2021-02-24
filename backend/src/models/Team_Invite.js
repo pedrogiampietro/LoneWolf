@@ -2,10 +2,10 @@ module.exports = (sequelize, DataTypes) => {
   const Team_Invites = sequelize.define(
     'Team_Invites',
     {
-      accountId: {
+      account_id: {
         type: DataTypes.INTEGER,
       },
-      teamId: {
+      team_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         reference: {
@@ -21,8 +21,8 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Team_Invites.associate = (models) => {
-    Team_Invites.belongsTo(models.Teams, { foreignKey: 'teamId' });
-    Team_Invites.belongsTo(models.Accounts, { foreignKey: 'accountId' });
+    Team_Invites.belongsTo(models.Teams, { foreignKey: 'team_id' });
+    Team_Invites.belongsTo(models.Accounts, { foreignKey: 'account_id' });
   };
 
   return Team_Invites;

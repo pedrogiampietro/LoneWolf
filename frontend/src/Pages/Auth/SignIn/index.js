@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { signIn } from '../../../actions/AccountActions';
 import { getFormData } from '../../../helpers/FormData';
 import Tilt from 'react-parallax-tilt';
 
 import Content from '../../Layout/Content';
 import Button from '../../../components/Button';
-import Error from '../../../components/Error';
+import Error from '../../../helpers/Error';
 import LoginImage from '../../../assets/img/login.png';
 
 import { FaSignInAlt } from 'react-icons/fa';
@@ -16,24 +16,25 @@ import './styles.css';
 const SignIn = () => {
   const dispatch = useDispatch();
 
-  const { account } = useSelector((state) => state.account);
+  // const { account } = useSelector((state) => state.account);
   const [error, setError] = React.useState();
   const [loading, setLoading] = React.useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
+
     const data = getFormData(event);
     dispatch(signIn(data)).catch((err) => {
       const metadata = err.response.data.metadata;
       const message = err.response.data.message;
       const convertObjToArray = Object.entries(metadata).length;
+      setLoading(false);
 
       if (convertObjToArray === 0) {
         setError(message);
       } else {
         setError(metadata.error.name);
-        setLoading(false);
       }
     });
   };
