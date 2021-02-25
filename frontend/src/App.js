@@ -9,6 +9,7 @@ import SignUp from './Pages/Auth/SignUp';
 // import Dashboard from './Pages/Dashboard';
 import AllTeams from './Pages/Teams/AllTeams';
 import CreateTeam from './Pages/Teams/CreateTeam';
+import Profile from './Pages/Auth/Profile';
 
 import ProtectedRoute from './helpers/ProtectedRoute';
 
@@ -37,6 +38,7 @@ const App = ({ initAccount }) => {
 
           {/* Protected Routes */}
           <ProtectedRoute exact path="/teams/create" component={CreateTeam} />
+          <ProtectedRoute exact path="/profile" component={Profile} />
         </Switch>
       </BrowserRouter>
     </>

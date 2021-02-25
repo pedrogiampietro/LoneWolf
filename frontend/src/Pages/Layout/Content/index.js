@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import Header from '../Header';
 import Footer from '../Footer';
 
+import CoverPlayer from '../../../assets/img/cover-player.jpg';
+
 const Content = ({ children }) => {
   const [background, setBackground] = React.useState('');
   const location = useLocation();
@@ -16,6 +18,11 @@ const Content = ({ children }) => {
           'http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/cover-team-2.jpg'
         );
         break;
+
+      case '/profile':
+        setBackground(`${CoverPlayer}`);
+        break;
+
       case '/sign-in':
         setBackground('');
         break;

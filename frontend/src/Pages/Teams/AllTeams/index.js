@@ -1,10 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { getTeamList } from '../../../actions/TeamActions';
 
 import Content from '../../Layout/Content';
+import TeamDefaultImg from '../../../assets/img/team-default.jpg';
 import './styles.css';
 
 const AllTeams = () => {
+  const dispatch = useDispatch();
+  const [teamList, setTeamList] = React.useState([]);
+
+  React.useEffect(() => {
+    dispatch(getTeamList())
+      .then(({ payload }) => {
+        const newData = payload.data.data;
+        setTeamList(newData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [dispatch]);
+
   return (
     <Content>
       <section id="teams">
@@ -54,16 +71,20 @@ const AllTeams = () => {
           </div>
 
           <article className="boxes">
-            {[1, 2, 3, 4, 5, 6, 7].map((teams) => (
+            {teamList.map((teams) => (
               <Link
-                key={teams}
-                to="/test"
+                key={teams.id}
+                to={`/team/${teams.id}`}
                 className="box"
                 style={{
-                  backgroundImage:
-                    'url("  http://via.placeholder.com/596x180/2196F3/FFFFFFF")',
+                  backgroundImage: `url(${TeamDefaultImg})`,
                 }}
               >
+                <span className="infos">
+                  <h4>{teams.name}</h4>
+                  <h5>{teams.subtitle}</h5>
+                </span>
+
                 <div className="overlay">
                   <h4>View team page</h4>
                   <h5>Click here to see</h5>

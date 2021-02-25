@@ -8,6 +8,12 @@ const { uploadTeamLogo } = require('../middlewares/multer');
 
 const router = express.Router();
 
+router.get('/', async (req, res) => {
+  const getTeamList = await Teams.findAll();
+
+  return res.jsonOK(getTeamList);
+});
+
 router.post(
   '/create',
   checkJwt,
@@ -15,7 +21,7 @@ router.post(
   async (req, res) => {
     try {
       const { account_id, body, file } = req;
-      const { name, description } = body;
+      const { name, description, subtitle } = body;
       const finalFileName = file;
 
       const alreadyHaveTeam = await Team_Members.findAll({
@@ -44,6 +50,7 @@ router.post(
       const createTeam = await Teams.create({
         name,
         description,
+        subtitle,
         logo: `uploads/teams/logo/${finalFileName.filename}`,
         owner_id: account_id,
       });

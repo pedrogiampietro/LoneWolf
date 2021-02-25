@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { createNewTeam } from '../../../actions/TeamActions';
 
 import Content from '../../Layout/Content';
@@ -10,10 +9,8 @@ import NoAvatar from '../../../assets/img/no-avatar.png';
 import './styles.css';
 
 const CreateTeam = () => {
-  const dispatch = useDispatch();
-  const { team } = useSelector((state) => state.team);
-
   const [name, setName] = React.useState('');
+  const [subTitle, setSubTitle] = React.useState('');
   const [description, setDescription] = React.useState('');
   const [logo, setLogo] = React.useState('');
   const [LogoPreview, setLogoPreview] = React.useState('');
@@ -34,8 +31,9 @@ const CreateTeam = () => {
     event.preventDefault();
     const formData = new FormData();
     formData.append('name', name);
+    formData.append('subtitle', subTitle);
     formData.append('description', description);
-    formData.append('logo', logo)
+    formData.append('logo', logo);
 
     createNewTeam(formData);
   }
@@ -82,6 +80,15 @@ const CreateTeam = () => {
                 />
                 <input
                   className="input100"
+                  type="text"
+                  name="subtitle"
+                  maxlength="40"
+                  placeholder="Sub Titulo*"
+                  onChange={(e) => setSubTitle(e.target.value)}
+                />
+
+                <textarea
+                  className="input100 mb-4"
                   type="text"
                   name="description"
                   placeholder="Descrição*"
@@ -139,7 +146,7 @@ const CreateTeam = () => {
                   <Link to="#" className="title">
                     <h3>{name}</h3>
                   </Link>
-                  <span className="badge primary">{description}</span>
+                  <span className="badge primary">{subTitle}</span>
                   <span className="date">{name ? date : null}</span>
                 </div>
               </li>
