@@ -81,6 +81,14 @@ router.post('/sign-up', validateAccountSignUp, async (req, res) => {
   });
 });
 
+router.get('/profile-info', checkJwt, async (req, res) => {
+  const { account_id } = req;
+
+  const getProfile = await Accounts.findOne({ where: { id: account_id } });
+
+  return res.jsonOK(getProfile);
+});
+
 router.put(
   '/password',
   checkJwt,

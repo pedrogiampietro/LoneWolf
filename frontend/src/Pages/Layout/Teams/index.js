@@ -32,7 +32,6 @@ const Teams = () => {
               backgroundImage:
                 'url("http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/Team1.jpg")',
             }}
-            onclick="window.location.href = 'http://themes.pixiesquad.com/pixiehuge/purple-haste/team/midnight-turtles'"
           >
             <div className="overlay">
               <h4>View team page</h4>
@@ -59,7 +58,6 @@ const Teams = () => {
               backgroundImage:
                 'url("http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/Team2.jpg")',
             }}
-            onclick="window.location.href = 'http://themes.pixiesquad.com/pixiehuge/purple-haste/team/rhyno-domynos'"
           >
             <div className="overlay">
               <h4>View team page</h4>
@@ -86,7 +84,6 @@ const Teams = () => {
               backgroundImage:
                 'url("http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/Team3.jpg")',
             }}
-            onclick="window.location.href = 'http://themes.pixiesquad.com/pixiehuge/purple-haste/team/black-panthers'"
           >
             <div className="overlay">
               <h4>View team page</h4>
@@ -113,7 +110,6 @@ const Teams = () => {
               backgroundImage:
                 'url("http://themes.pixiesquad.com/pixiehuge/orange-elite/wp-content/uploads/2017/06/Team4.jpg")',
             }}
-            onclick="window.location.href = 'http://themes.pixiesquad.com/pixiehuge/purple-haste/team/cursed-warriors'"
           >
             <div className="overlay">
               <h4>View team page</h4>

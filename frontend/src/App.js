@@ -1,28 +1,27 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { initAccount } from './actions/AccountActions';
 
-import Layout from './Pages/Layout';
+import './assets/css/bootstrap.css';
+import './assets/css/chosen.min.css';
+import './assets/css/flag-icon.min.css';
+import './assets/css/font-awesome.min.css';
+import './assets/css/main.css';
+import './assets/css/owl.carousel.min.css';
+import './assets/css/responsive.css';
+
+import ProtectedRoute from './helpers/ProtectedRoute';
+import Profile from './Pages/Auth/Profile';
 import SignIn from './Pages/Auth/SignIn';
 import SignUp from './Pages/Auth/SignUp';
+import Layout from './Pages/Layout';
 // import Dashboard from './Pages/Dashboard';
 import AllTeams from './Pages/Teams/AllTeams';
 import CreateTeam from './Pages/Teams/CreateTeam';
-import Profile from './Pages/Auth/Profile';
-
-import ProtectedRoute from './helpers/ProtectedRoute';
-
-import './assets/css/font-awesome.min.css';
-import './assets/css/bootstrap.css';
-import './assets/css/flag-icon.min.css';
-import './assets/css/owl.carousel.min.css';
-import './assets/css/chosen.min.css';
-import './assets/css/main.css';
-import './assets/css/responsive.css';
 
 const App = ({ initAccount }) => {
-  useEffect(() => {
+  React.useEffect(() => {
     initAccount();
   }, [initAccount]);
 

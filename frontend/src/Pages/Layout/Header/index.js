@@ -1,9 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 import Logo from '../../../assets/img/logo.png';
 
 const Header = () => {
+  const { account } = useSelector((state) => state.account);
+
   return (
     <header>
       <div className="topbar">
@@ -146,9 +148,15 @@ const Header = () => {
                 <span className="title">Sobre nós</span>
               </Link>
             </li>
-            <Link to="/sign-in" className="login-btn">
-              Login
-            </Link>
+            {account ? (
+              <Link to="/profile" className="login-btn">
+                Profile
+              </Link>
+            ) : (
+              <Link to="/sign-in" className="login-btn">
+                Login
+              </Link>
+            )}
           </ul>
         </div>
       </nav>

@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Sponsors = () => {
-  const [active, setActive] = useState(0);
-  const [position, setPosition] = useState(0);
-  const contentRef = useRef();
+  const [active, setActive] = React.useState(0);
+  const [position, setPosition] = React.useState(0);
+  const contentRef = React.useRef();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const { width } = contentRef.current.getBoundingClientRect();
     setPosition(-(width * active));
   }, [active]);
@@ -25,7 +25,7 @@ const Sponsors = () => {
         <span
           className="leftArrow"
           onClick={slidePrev}
-          style={{ display: active >= 1 ? "block" : "none" }}
+          style={{ display: active >= 1 ? 'block' : 'none' }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,9 +46,9 @@ const Sponsors = () => {
             <div
               style={{
                 transform: `translateX(${position}px)`,
-                display: "flex",
-                flex: "1",
-                transition: "all .3s ease",
+                display: 'flex',
+                flex: '1',
+                transition: 'all .3s ease',
               }}
             >
               <div
@@ -244,7 +244,7 @@ const Sponsors = () => {
         <span
           className="rightArrow"
           onClick={slideNext}
-          style={{ display: active === 2 ? "none" : "block" }}
+          style={{ display: active === 2 ? 'none' : 'block' }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

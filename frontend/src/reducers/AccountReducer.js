@@ -1,6 +1,7 @@
 import {
   SIGN_IN,
   SIGN_UP,
+  PROFILE_INFO,
   SIGN_OUT,
   INIT_ACCOUNT,
   REFRESH_TOKEN,
@@ -25,6 +26,7 @@ export default function (state = initialState, action) {
   switch (type) {
     case SIGN_IN:
     case SIGN_UP:
+    case PROFILE_INFO:
       const response = payload ? payload.data : null;
       const account = response ? response.data : null;
       const metadata = response ? response.metadata : null;

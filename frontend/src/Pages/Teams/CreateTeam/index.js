@@ -1,20 +1,32 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { profileInfo } from '../../../actions/AccountActions';
 import { createNewTeam } from '../../../actions/TeamActions';
 
-import Content from '../../Layout/Content';
-import Button from '../../../components/Button';
-import NoShield from '../../../assets/img/no-shield.svg';
 import NoAvatar from '../../../assets/img/no-avatar.png';
+import NoShield from '../../../assets/img/no-shield.svg';
+import Button from '../../../components/Button';
+import Content from '../../Layout/Content';
 import './styles.css';
 
 const CreateTeam = () => {
+  const dispatch = useDispatch();
+
   const [name, setName] = React.useState('');
   const [subTitle, setSubTitle] = React.useState('');
   const [description, setDescription] = React.useState('');
   const [logo, setLogo] = React.useState('');
-  const [LogoPreview, setLogoPreview] = React.useState('');
+  const [logoPreview, setLogoPreview] = React.useState('');
   const [loading, setLoading] = React.useState(false);
+  const [profileData, setProfileData] = React.useState([]);
+
+  React.useEffect(() => {
+    dispatch(profileInfo()).then(({ payload }) => {
+      const newData = payload.data.data;
+      setProfileData(newData);
+    });
+  }, [dispatch]);
 
   const handleSelectImages = (event) => {
     if (!event.target.files) {
@@ -82,7 +94,7 @@ const CreateTeam = () => {
                   className="input100"
                   type="text"
                   name="subtitle"
-                  maxlength="40"
+                  maxLength="40"
                   placeholder="Sub Titulo*"
                   onChange={(e) => setSubTitle(e.target.value)}
                 />
@@ -125,7 +137,7 @@ const CreateTeam = () => {
           <article>
             <ul className="widget">
               <li>
-                {LogoPreview === null || LogoPreview === '' ? (
+                {logoPreview === null || logoPreview === '' ? (
                   <img
                     className="img-fluid noShield"
                     src={NoShield}
@@ -134,7 +146,7 @@ const CreateTeam = () => {
                 ) : (
                   <img
                     className="img-fluid noShield mr-3"
-                    src={LogoPreview}
+                    src={logoPreview}
                     alt="NoShield"
                   />
                 )}
@@ -162,7 +174,7 @@ const CreateTeam = () => {
                     <span className="category">Owner</span>
                   </span>
                   <Link to="#" className="title">
-                    Nick Leader
+                    {profileData.nickname}
                   </Link>
                   <span className="date">Archievements</span>
                 </div>

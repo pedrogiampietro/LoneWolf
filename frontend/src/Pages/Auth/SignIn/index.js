@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { signIn } from '../../../actions/AccountActions';
 import { getFormData } from '../../../helpers/FormData';
 import Tilt from 'react-parallax-tilt';
@@ -16,9 +16,11 @@ import './styles.css';
 const SignIn = () => {
   const dispatch = useDispatch();
 
-  // const { account } = useSelector((state) => state.account);
   const [error, setError] = React.useState();
   const [loading, setLoading] = React.useState(false);
+
+  const { account } = useSelector((state) => state.account);
+  if (account) return <Redirect to="/profile" />;
 
   const handleSubmit = (event) => {
     event.preventDefault();

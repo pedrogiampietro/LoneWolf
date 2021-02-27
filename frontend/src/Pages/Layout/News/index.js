@@ -32,7 +32,6 @@ const News = () => {
               backgroundImage:
                 'url("http://themes.pixiesquad.com/pixiehuge/purple-haste/wp-content/uploads/2017/06/post10.jpg")',
             }}
-            onclick="window.location = 'http://themes.pixiesquad.com/pixiehuge/purple-haste/renegades-defeat-signature-to-minor-playoffs/'"
           >
             <a
               href="http://themes.pixiesquad.com/pixiehuge/purple-haste/category/overwatch/"
@@ -54,7 +53,6 @@ const News = () => {
               backgroundImage:
                 'url("http://themes.pixiesquad.com/pixiehuge/purple-haste/wp-content/uploads/2017/06/post11.jpg")',
             }}
-            onclick="window.location = 'http://themes.pixiesquad.com/pixiehuge/purple-haste/scream-now-we-know-were-capable-of-winning/'"
           >
             <a
               href="http://themes.pixiesquad.com/pixiehuge/purple-haste/category/counter-strike/"
@@ -76,7 +74,6 @@ const News = () => {
               backgroundImage:
                 'url("http://themes.pixiesquad.com/pixiehuge/purple-haste/wp-content/uploads/2017/06/post12.jpg")',
             }}
-            onclick="window.location = 'http://themes.pixiesquad.com/pixiehuge/purple-haste/dh-valencia-and-atlanta-qualifiers-announced/'"
           >
             <div className="details">
               <a
@@ -98,7 +95,6 @@ const News = () => {
               backgroundImage:
                 'url("http://themes.pixiesquad.com/pixiehuge/purple-haste/wp-content/uploads/2017/06/post13.jpg")',
             }}
-            onclick="window.location = 'http://themes.pixiesquad.com/pixiehuge/purple-haste/winners-and-losers-of-esl-pro-league-s5-finals/'"
           >
             <div className="details">
               <a
@@ -120,7 +116,6 @@ const News = () => {
               backgroundImage:
                 'url("http://themes.pixiesquad.com/pixiehuge/purple-haste/wp-content/uploads/2017/06/post14.jpg")',
             }}
-            onclick="window.location = 'http://themes.pixiesquad.com/pixiehuge/purple-haste/shahzam-returns-to-misfits-active-lineup/'"
           >
             <div className="details">
               <a
