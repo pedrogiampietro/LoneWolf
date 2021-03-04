@@ -351,10 +351,6 @@ section#aboutStaff .container.bg ul.header li a {
   .login-btn {
     margin-left: 24px;
   }
-  div > .cover-bg {
-    height: 0;
-    width: 0%;
-  }
 }
 
 a {
@@ -4118,11 +4114,20 @@ section#player-details
     height: 120vw !important;
   }
 
-  div > .cover-bg {
-    height: 0;
-    width: 0%;
+  .cover-bg {
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+
+    height: 202px;
+    width: 93% !important;
+    max-width: 1200px;
+    position: absolute;
+    z-index: -1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
+
 section#sponsor-page {
   margin-top: 244px;
 }
@@ -4319,14 +4324,13 @@ section#cta-sponsor article.content .btn.btn-transparent {
   border-color: #fff;
   color: #fff;
 }
+
 .cover-bg {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-
-  height: 202px;
-  width: 63%;
-  max-width: 1200px;
+  height: 324px;
+  width: 100%;
   position: absolute;
   z-index: -1;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);

@@ -35,15 +35,15 @@ const Content = ({ children }) => {
   return (
     <div>
       <Header />
-      <div className="container">
-        <div
-          className="cover-bg"
-          style={{
-            backgroundImage: `url("${background}")`,
-          }}
-        />
-        {children}
-      </div>
+
+      <div
+        className="cover-bg"
+        style={{
+          backgroundImage: `url("${background}")`,
+        }}
+      />
+      {children}
+
       <Footer />
     </div>
   );
